@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>update</title>
+    <style>
+        .upload-name {
+        display: inline-block;
+        height: 40px;
+         padding: 0 10px;
+        vertical-align: middle;
+        border: 1px solid #dddddd;
+         width: 60%;
+        color: #999999;
+        border-radius: 5px;
+    }
+
+    .upload-name2{
+
+    display: inline-block;
+      padding: 10px 20px;
+      color: #fff;
+      vertical-align: right;
+      background-color: rgba(0, 53, 109, 0.95);
+      cursor: pointer;
+      height: 40px;
+      margin-left: 10px;
+      border-radius: 5px;
+
+    }
+
+    .upload-name3{
+
+    display: inline-block;
+        height: 200px;
+         padding: 0 10px;
+        vertical-align: middle;
+        border: 1px solid #dddddd;
+         width: 60%;
+        color: #999999;
+        border-radius: 5px;
+
+    }
+    </style>
+</head>
+<body>
+<form action="/board/update" method="post" name="updateForm">
+
+    <h1 align="center">게시글 수정</h1>
+    <input type="hidden" name="id" th:value="${boardUpdate.id}">
+    작성자<br>
+    <input type="text" class="upload-name" name="boardWriter" th:value="${boardUpdate.boardWriter}" readonly> <br>
+    비밀번호<br>
+    <input type="text" class="upload-name" name="boardPass" id="boardPass"> <br>
+    제목<br>
+    <input type="text" class="upload-name" name="boardTitle" th:value="${boardUpdate.boardTitle}"> <br>
+    내용<br>
+    <textarea name="boardContents" class="upload-name3" th:text="${boardUpdate.boardContents}"></textarea> <br>
+    <input type="hidden" name="boardHits" th:value="${boardUpdate.boardHits}"><br>
+
+   <!-- file: <input type="file" name="boardFile" th:value = "${boardUpdate.boardFile}" alt=""><br>-->
+
+
+
+    <input type="button" class="upload-name2" value="글수정" onclick="boardUpdate()">
+</form>
+<script th:inline="javascript">
+  const boardUpdate = () => {
+    const pass = [[${boardUpdate.boardPass}]];
+    const inputPass = document.getElementById("boardPass").value;
+    if (pass == inputPass) {
+      document.updateForm.submit();
+    } else {
+      alert("비밀번호가 일치하지 않습니다.");
+    }
+  }
+</script>
+</body>

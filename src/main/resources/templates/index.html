@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>게시판</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+</head>
+<body>
+<button class="btn" onclick="saveReq()">글작성</button>
+<button class="btn" onclick="listReq()">글목록</button>
+<button class="btn" onclick="pagingReq()">페이징목록</button>
+</body>
+<script>
+    const saveReq = () => {
+        location.href = "/board/save";
+    }
+
+    const listReq = () => {
+    location.href = "/board/";
+  }
+
+  const pagingReq = () => {
+    location.href = "/board/paging";
+  }
+</script>
+</html>

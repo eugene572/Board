@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>save</title>
+    <style>
+
+    .upload-name2{
+
+    display: inline-block;
+      padding: 10px 20px;
+      color: #fff;
+      vertical-align: right;
+      background-color: rgba(0, 53, 109, 0.95);
+      cursor: pointer;
+      height: 40px;
+      margin-left: 10px;
+      border-radius: 5px;
+
+    }
+
+    .upload-name3{
+
+    display: inline-block;
+        height: 200px;
+         padding: 0 10px;
+        vertical-align: middle;
+        border: 1px solid #dddddd;
+         width: 60%;
+        color: #999999;
+        border-radius: 5px;
+
+    }
+        .upload-name {
+        display: inline-block;
+        height: 40px;
+         padding: 0 10px;
+        vertical-align: middle;
+        border: 1px solid #dddddd;
+         width: 60%;
+        color: #999999;
+        border-radius: 5px;
+    }
+
+  <!--  .container label {
+      display: inline-block;
+      padding: 10px 20px;
+      color: #fff;
+      vertical-align: middle;
+      background-color: rgba(0, 53, 109, 0.95);
+      cursor: pointer;
+      height: 20px;
+      margin-left: 10px;
+      border-radius: 5px;
+    }
+-->
+
+
+
+    </style>
+</head>
+<body>
+
+<form action="/board/save" method="post" enctype="multipart/form-data">
+
+    <h1 align="center">게시글 작성</h1>
+
+    작성자<br>
+    <input type="text" class="upload-name" name="boardWriter" placeholder="작성자를 입력해주세요"> <br>
+    비밀번호<br>
+    <input type="text" class="upload-name" name="boardPass" placeholder="비밀번호를 입력해주세요"> <br>
+    제목<br>
+    <input type="text" class="upload-name" name="boardTitle" placeholder="제목을 입력해주세요"> <br>
+    내용<br>
+    <textarea name="boardContents" class="upload-name3"></textarea> <br>
+    파일<br>
+    <input type="file" name="boardFile"> <br>
+
+    <input type="submit" class="upload-name2" value="글작성">
+
+</form>
+
+
+</body>
+</html>
